@@ -17,6 +17,8 @@ module getUser =
     let getPasswordById id = dapperMapParameterizedQuery<String>
                                 "Select password from master.[user] where id = @UserId"
                                 (Map ["UserId", id]) |> Seq.head
+                                
+module postUser =
     
     let loginUser (login) =
         dapperMapParameterizedQuery<Guid>

@@ -5,6 +5,7 @@ open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 open sorryProfessor.Provider.BilletProvider
 open getBillet
+open postBillet
 open sorryProfessor
 
 

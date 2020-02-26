@@ -20,6 +20,7 @@ module getBillet =
                                where id_user = @id_user order by date desc"
                                (Map ["id_user", id]) |> Seq.toArray
 
+module postBillet =
     let addBillet billet =
         dapperMapParameterizedQueryModel<unit> "Insert into master.billet VALUES (@id, @date,
                                             @excuse, @id_user)"

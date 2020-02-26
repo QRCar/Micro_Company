@@ -14,8 +14,10 @@
         <Compile Include="Provider\UtilsProvider.fs" />
         <Compile Include="Provider\UserProvider.fs" />
         <Compile Include="Provider\BilletProvider.fs" />
+        <Compile Include="Provider\VoteProvider.fs" />
         <Compile Include="Controllers\UserController.fs" />
         <Compile Include="Controllers\BilletController.fs" />
+        <Compile Include="Controllers\VoteController.fs" />
         <Compile Include="Startup.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
