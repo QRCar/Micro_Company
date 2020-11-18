@@ -16,11 +16,6 @@ type VoteController (logger : ILogger<VoteController>) =
     [<HttpGet>]
     member __.Get() : Guid[] =
         getNbVote
-        
-        
-    [<HttpGet("/vote/{billetid}")>]
-    member __.GetById(billetid : Guid) : int =
-        GetNbVoteById billetid
     
     
     [<HttpGet("/vote/later")>]

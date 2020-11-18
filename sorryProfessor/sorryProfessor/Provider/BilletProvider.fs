@@ -8,20 +8,20 @@ open sorryProfessor
                        
 module getBillet =
     
-    let getAllBillet = dapperQuery<Billet> "Select id, date, excuse, id_user from master.billet order by date desc"
+    let getAllBillet = dapperQuery<Billet> "Select id, date, excuse, id_user from dbo.billet order by date desc"
     
     let getBilletById id = dapperMapParameterizedQuery<Billet>
-                               "Select id, date, excuse, id_user from master.billet
+                               "Select id, date, excuse, id_user from dbo.billet
                                where id = @id order by date desc"
                                (Map ["id", id]) |> Seq.head
     
     let getBilletbyUser id = dapperMapParameterizedQuery<Billet>
-                               "Select id, date, excuse, id_user from master.billet
+                               "Select id, date, excuse, id_user from dbo.billet
                                where id_user = @id_user order by date desc"
                                (Map ["id_user", id]) |> Seq.toArray
 
 module postBillet =
     let addBillet billet =
-        dapperMapParameterizedQueryModel<unit> "Insert into master.billet VALUES (@id, @date,
+        dapperMapParameterizedQueryModel<unit> "Insert into dbo.billet VALUES (@id, @date,
                                             @excuse, @id_user)"
                                             (billet)
