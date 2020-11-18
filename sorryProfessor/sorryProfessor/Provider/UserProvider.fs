@@ -15,19 +15,19 @@ module getUser =
                           (Map ["UserId", id]) |> Seq.head
                           
     let getPasswordById id = dapperMapParameterizedQuery<String>
-                                "Select password from master.[user] where id = @UserId"
+                                "Select password from dbo.[user] where id = @UserId"
                                 (Map ["UserId", id]) |> Seq.head
                                 
 module postUser =
     
     let loginUser (login) =
         dapperMapParameterizedQuery<Guid>
-            "Select id from master.[user] where login = @login"
+            "Select id from dbo.[user] where login = @login"
             (Map ["login", login]) |> Seq.head
                                 
     let registerUser registerUser =
         registerUser.password <- strongHash registerUser.password
-        dapperMapParameterizedQueryModel<unit> "Insert into master.[user] VALUES (@id, @firstname,
+        dapperMapParameterizedQueryModel<unit> "Insert into dbo.[user] VALUES (@id, @firstname,
                                             @lastname, @school, @promo, @classe,
                                             @password, @login)"
                                             (registerUser)

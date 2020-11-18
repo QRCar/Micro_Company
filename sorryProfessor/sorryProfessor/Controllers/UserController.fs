@@ -2,11 +2,6 @@ namespace sorryProfessor.Controllers
 
 open Microsoft.AspNetCore.Http
 open System
-open System.Net
-open System.Net.Http
-open System.Net.Http
-open System.Net.Http
-open System.Web.Http
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 open sorryProfessor
@@ -41,17 +36,16 @@ type UserController (logger : ILogger<UserController>) =
     //------------------------------------------------//
     
     [<HttpPost("/user/login")>]
-    member __.Login([<FromBody>]login: Login,[<FromQuery>] request : HttpRequestMessage) =
+    member __.Login([<FromBody>]login: Login) =
         let id = loginUser login.login
         if id = Guid.Empty then
-            new HttpResponseMessage(HttpStatusCode.BadRequest);
+            StatusCodes.Status400BadRequest
         else
             let registerPassword = getPasswordById id
             if HashPassword.verify registerPassword login.password then
-                request.CreateResponse<Guid>(HttpStatusCode.OK, id)
+                StatusCodes.Status200OK
             else
-                new HttpResponseMessage(HttpStatusCode.BadRequest);
-                
+                StatusCodes.Status400BadRequest
 
         
     [<HttpPost>]
