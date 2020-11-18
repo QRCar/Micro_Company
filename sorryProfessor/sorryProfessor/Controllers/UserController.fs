@@ -1,12 +1,20 @@
 namespace sorryProfessor.Controllers
 
+open Microsoft.AspNetCore.Authentication
+open Microsoft.AspNetCore.Authentication
+open Microsoft.AspNetCore.Authentication
+open Microsoft.AspNetCore.Authentication
+open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Http
 open System
+open System.Web.Http.Results
+open System.Web.Http.Results
+open Microsoft.AspNetCore.Mvc
+open Microsoft.AspNetCore.Mvc
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 open sorryProfessor
 open getUser
-open postUser
 open sorryProfessor.Provider.UtilsProvider
 
 [<ApiController>]
