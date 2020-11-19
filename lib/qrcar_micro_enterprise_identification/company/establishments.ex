@@ -13,7 +13,7 @@ defmodule QrcarMicroEnterpriseIdentification.Company.Establishments do
     field :phone, :string
     field :siret, :string
     field :zipcode, :integer
-    #field :organizations_id, :binary_id
+    field :organizations_id, :binary_id
     #belongs_to :organizations, QrcarMicroEnterpriseIdentification.Company.Organizations
 
     timestamps()
