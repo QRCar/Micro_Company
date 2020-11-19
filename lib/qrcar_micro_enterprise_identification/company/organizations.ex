@@ -8,7 +8,7 @@ defmodule QrcarMicroEnterpriseIdentification.Company.Organizations do
     field :name, :string
     field :siren, :string
     field :logo, :string
-    has_many :establishments, QrcarMicroEnterpriseIdentification.Company.Establishments, foreign_key: :created_by_id
+    #has_many :establishments, QrcarMicroEnterpriseIdentification.Company.Establishments, foreign_key: :created_by_id
 
     timestamps()
   end
