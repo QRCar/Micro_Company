@@ -7,6 +7,7 @@ defmodule QrcarMicroEnterpriseIdentification.Company.Organizations do
   schema "organizations" do
     field :name, :string
     field :siren, :string
+    field :logo, :string
     has_many :establishments, QrcarMicroEnterpriseIdentification.Company.Establishments, foreign_key: :created_by_id
 
     timestamps()
