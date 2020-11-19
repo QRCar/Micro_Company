@@ -16,8 +16,8 @@ defmodule QrcarMicroEnterpriseIdentification.Company.Organizations do
   @doc false
   def changeset(organizations, attrs) do
     organizations
-    |> cast(attrs, [:name, :siren])
-    |> validate_required([:name, :siren])
+    |> cast(attrs, [:name, :siren, :logo])
+    |> validate_required([:name, :siren, :logo])
     |> unique_constraint(:siren)
   end
 end
